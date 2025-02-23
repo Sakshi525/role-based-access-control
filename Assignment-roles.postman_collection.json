@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "e38fb2b7-8433-42d9-a277-306bfdf656f7",
+		"name": "Assignment-roles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33908264",
+		"_collection_link": "https://galactic-robot-964682.postman.co/workspace/New-Team-Workspace~21895229-ea27-48a0-80b4-3e4cea23d8a5/collection/33908264-e38fb2b7-8433-42d9-a277-306bfdf656f7?action=share&source=collection_link&creator=33908264"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "5c7295b8-fd44-41fc-80ce-086148e7c9eb"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Sakshi\",\n  \"lastName\": \"testing\",\n  \"email\": \"sakshi@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"67bb1c39aeefac4777c819d0\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "55dfbcdc-4e3a-470b-88f0-cfe2ca3bbc7b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"sakshi@example.com\",\n  \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "baadc9bb-bf36-458e-ba20-602ae5778ca4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"roleName\": \"Admin\",\n  \"accessModules\": [\"users\", \"tasks\", \"reports\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "a7008ec1-2b6d-4851-a66e-d9ec64664ca1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"roleName\": \"SuperAdmin\",\n  \"accessModules\": [\"Dashboard\", \"Users\", \"Reports\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/roles/67bb1addaeefac4777c819cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles",
+						"67bb1addaeefac4777c819cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/api/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Role",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3005/api/roles/67bb1addaeefac4777c819cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles",
+						"67bb1addaeefac4777c819cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Access module",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "59b79b1f-b357-4ed0-835c-0eb8934fc3f0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"Tasks\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/roles/67bb1c39aeefac4777c819d0/add-module",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles",
+						"67bb1c39aeefac4777c819d0",
+						"add-module"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Access module",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "7aad729e-c44e-4e5e-91db-140f6bf556bf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"Reports\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3005/api/roles/67bb1c39aeefac4777c819d0/remove-module",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"api",
+						"roles",
+						"67bb1c39aeefac4777c819d0",
+						"remove-module"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
